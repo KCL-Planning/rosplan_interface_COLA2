@@ -10,6 +10,8 @@
 #include "auv_msgs/GoalDescriptor.h"
 #include "mongodb_store/message_store.h"
 #include "geometry_msgs/PoseStamped.h"
+#include "rosplan_knowledge_msgs/KnowledgeItem.h"
+#include "rosplan_knowledge_msgs/KnowledgeUpdateService.h"
 
 #ifndef KCL_cola2
 #define KCL_cola2
@@ -32,6 +34,7 @@ namespace KCL_rosplan {
 		actionlib::SimpleActionClient<cola2_control::WorldWaypointReqAction> action_client;
 		ros::Publisher waypoint_request_pub;
 		ros::Publisher action_feedback_pub;
+		ros::ServiceClient update_knowledge_client;
 
 	public:
 
